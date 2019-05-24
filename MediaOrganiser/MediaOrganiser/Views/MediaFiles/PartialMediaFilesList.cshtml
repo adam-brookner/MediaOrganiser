@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MediaOrganiser.Models.MediaFile>
+
+<div>
+    <h4>MediaFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Playlist.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Playlist.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FilePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FilePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MediaFileType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MediaFileType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

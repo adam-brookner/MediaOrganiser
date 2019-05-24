@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MediaOrganiser.Models.Image>
+
+@{
+    ViewBag.Title = "Images";
+}
+
+<!DOCTYPE html>
+
+
+<h4>@ViewBag.Title</h4>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FilePath)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Url.Content(item.FilePath)" width="50" height="50" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilePath)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ImageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ImageID })
+            </td>
+        </tr>
+    }
+
+
+</table>

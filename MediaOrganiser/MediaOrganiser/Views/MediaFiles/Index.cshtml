@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MediaOrganiser.Models.MediaFile>
+
+@{
+    ViewBag.Title = "Media Files";
+}
+
+<!DOCTYPE html>
+
+
+<h4>@ViewBag.Title</h4>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    Find by name: @Html.TextBox("searchString")
+    <input type="submit" value="Search" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Audio
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <audio controls>
+                    <source src="@Url.Content(item.FilePath)" type="audio/mp3" />
+                </audio>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CategoryID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryID })
+            </td>
+        </tr>
+    }
+
+
+</table>
